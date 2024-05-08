@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
 
     public HealthBar healthBar;
     public HungerBar hungerBar;
+    private Animator animator;
+    public bool hasSword = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +23,14 @@ public class Player : MonoBehaviour
 
         currentHunger = maxHunger;
         hungerBar.SetMaxHunger(maxHunger);
-        
-       
+        animator = transform.Find("Body").GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
         }
@@ -36,10 +38,13 @@ public class Player : MonoBehaviour
         {
             DecreaseHunger(3);
         }
+        CheckItemAnimation();
+        animator.SetBool("hasSword", hasSword);
+
     }
 
     void TakeDamage(int damage)
-    { 
+    {
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
@@ -60,4 +65,33 @@ public class Player : MonoBehaviour
             currentHunger = 0; // Asegurarse de que no sea menor que cero
         hungerBar.SetHunger(currentHunger);
     }
+
+    void CheckItemAnimation()
+    {
+        Item currentItem = InventoryManager.instance.GetSelectedItem();
+        Debug.Log(currentItem);
+
+        switch (currentItem.type)
+        {
+            case ItemType.Espada:
+                Debug.Log("Es una espada.");
+                hasSword = true;
+                break;
+            case ItemType.Pico:
+                Debug.Log("Es un pico.");
+                hasPico = true;
+                break;
+            case ItemType.Hacha:
+                Debug.Log("Es un hacha.");
+                hasAxe = true;
+                break;
+            default:
+                Debug.Log("No es un tipo de item reconocido.");
+                hasSword = false;
+                hasPico = false;
+                hasAxe = false;
+                break;
+        }
+    }
 }
+

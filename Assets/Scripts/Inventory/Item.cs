@@ -26,7 +26,8 @@ public class Item : ScriptableObject
 public enum ItemType 
 { 
     BuildingBlock,
-    Tool
+    Tool,
+    Espada
 }
 
 public enum ActionType
