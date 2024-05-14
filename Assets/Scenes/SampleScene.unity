@@ -8532,6 +8532,38 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95c05e4a24dca9f4896bf30b598387d3, type: 3}
+--- !u!1 &1300640995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1300640996}
+  m_Layer: 0
+  m_Name: MaquinasRetro
+  m_TagString: Estatua
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1300640996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300640995}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5090674, y: 0.41185167, z: 0.050020836}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1650815057}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1313192755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8781,6 +8813,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda3061634d18214cacf600cb1598a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1409119347
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1300640996}
+    m_Modifications:
+    - target: {fileID: 3255928184579647606, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.050020836
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586690911731117285, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: m_Name
+      value: MaquinaRetro
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
 --- !u!224 &1468731423 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7168484653895051374, guid: 95c05e4a24dca9f4896bf30b598387d3, type: 3}
@@ -9415,6 +9508,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611890238}
   m_CullTransparentMesh: 1
+--- !u!4 &1650815057 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+  m_PrefabInstance: {fileID: 1409119347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1671346078
 GameObject:
   m_ObjectHideFlags: 0
@@ -12309,4 +12407,5 @@ SceneRoots:
   - {fileID: 1907979606}
   - {fileID: 1333992351}
   - {fileID: 960875542}
+  - {fileID: 1300640996}
   - {fileID: 1172650851}
