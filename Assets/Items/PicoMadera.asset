@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PicoMadera
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  type: 1
-  actionType: 0
+  type: 4
+  actionType: 3
   range: {x: 5, y: 4}
   stackable: 0
   image: {fileID: -59161699, guid: 2442c72ef036dca45ab300cfcc58b6d9, type: 3}

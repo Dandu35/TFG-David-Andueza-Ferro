@@ -15,6 +15,13 @@ public class Item : ScriptableObject
     public ActionType actionType;
     public Vector2Int range = new Vector2Int(5, 4);
 
+    [Header("Only Weapons")]
+    public int damage;
+
+    [Header("Only Consumibles")]
+    public int healingAmount; 
+    public int hungerRestoration;
+
     [Header("Only UI")]
     public bool stackable = true;
     
@@ -26,13 +33,21 @@ public class Item : ScriptableObject
 public enum ItemType 
 { 
     BuildingBlock,
-    Tool,
-    Espada
+    Resource,
+    Espada,
+    Hacha,
+    Pico,
+    Pocion,
+    Carne
 }
 
 public enum ActionType
 { 
+    Resource,
+    Attack,
     Dig,
-    Mine
+    Mine,
+    Healing,
+    Eaten
 }
 
