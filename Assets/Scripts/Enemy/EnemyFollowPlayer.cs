@@ -7,16 +7,30 @@ public class EnemyFollowPlayer : MonoBehaviour
     public float speed;
     public float lineOfSite;
     public float attackRange;
-    public int attackDamage = 10; // Daño del ataque
+    public int attackDamage = 5; // Daño del ataque
     public float attackCooldown = 2f; // Tiempo de espera entre ataques
     private Transform player;
     private float nextAttackTime = 0f;
     private Animator animator;
+
+    private WorldTime worldTime;
+    private int lastDay = 0;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
+
+        GameObject worldTimeObject = GameObject.FindWithTag("WorldTime");
+        if (worldTimeObject != null)
+        {
+            worldTime = worldTimeObject.GetComponent<WorldTime>();
+            worldTime.WorldTimeChanged += OnWorldTimeChanged;
+        }
+        else
+        {
+            Debug.LogError("No se encontró el objeto con el script WorldTime adjunto.");
+        }
     }
 
     // Update is called once per frame
@@ -56,6 +70,29 @@ public class EnemyFollowPlayer : MonoBehaviour
             playerController.TakeDamage(attackDamage);
         }
     }
+
+    void OnDestroy()
+    {
+        if (worldTime != null)
+        {
+            worldTime.WorldTimeChanged -= OnWorldTimeChanged;
+        }
+    }
+
+    private void OnWorldTimeChanged(object sender, System.TimeSpan newTime)
+    {
+        // Calcular el día actual
+        int currentDay = (int)newTime.TotalDays + 1; // Sumamos 1 porque TotalDays empieza en 0
+
+        // Verificar si ha cambiado el día
+        if (currentDay != lastDay)
+        {
+            lastDay = currentDay;
+            // Incrementar el daño del enemigo cada día en 5
+            attackDamage += 5;
+        }
+    }
+
 
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.green;

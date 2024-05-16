@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public int currentHealth;
     public int maxHunger = 10;
     public int currentHunger;
-
+    private WorldTime worldTime;
     public HealthBar healthBar;
     public HungerBar hungerBar;
     private Animator animator;
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public bool hasPico = false;
 
     public Canvas canvas;
+
+    private TimeSpan lastDecreaseTime;
 
     public float moveSpeed = 1f;
     public ContactFilter2D movementFilter;
@@ -47,6 +50,17 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        GameObject worldTimeObject = GameObject.FindWithTag("WorldTime");
+        if (worldTimeObject != null)
+        {
+            worldTime = worldTimeObject.GetComponent<WorldTime>();
+            worldTime.WorldTimeChanged += OnWorldTimeChanged; // Suscribir al evento WorldTimeChanged
+        }
+        else
+        {
+            Debug.LogError("No se encontró el objeto con el script WorldTime adjunto.");
+        }
     }
 
     void Update()
@@ -103,6 +117,24 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    void OnDestroy()
+    {
+        if (worldTime != null)
+        {
+            worldTime.WorldTimeChanged -= OnWorldTimeChanged; // Darse de baja del evento al destruir el objeto
+        }
+    }
+
+    private void OnWorldTimeChanged(object sender, TimeSpan newTime)
+    {
+        // Verificar si ha pasado al menos una hora desde el último decremento de la comida
+        TimeSpan timeSinceLastDecrease = newTime - lastDecreaseTime;
+        if (timeSinceLastDecrease.TotalHours >= 1)
+        {
+            DecreaseHunger(1); // Reducir la comida en 1 unidad
+            lastDecreaseTime = newTime; // Actualizar el tiempo del último decremento
+        }
+    }
 
 
 

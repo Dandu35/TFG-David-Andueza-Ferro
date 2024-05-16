@@ -8,6 +8,7 @@ TagManager:
   - Tree
   - Estatua
   - MaquinaRetro
+  - WorldTime
   layers:
   - Default
   - TransparentFX
