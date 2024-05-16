@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // Importa la librería de TextMeshPro
+using TMPro;
 using OpenAI;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class ChatGPTManager : MonoBehaviour
 {
@@ -12,13 +11,13 @@ public class ChatGPTManager : MonoBehaviour
 
     public TMP_InputField inputField; // Referencia al TMP_InputField
     public Text textObject; // Desafio
-
+    public static int idMaquina;
 
     public async void AskChatGPT()
     {
         string desafio = textObject.text;
         string userInput = inputField.text;
-        string newText = "Se le pide al usuario esto: " + desafio + ". Nos entrega este codigo: " + userInput + ".Comprueba si lo que el usuario a entregado corresponde con lo pedido y devuelve solo  si es correcto o incorrecto, una palabra";
+        string newText = "Se le pide al usuario que desarrolle el siguiente codigo: " + desafio + ". Nos entrega este codigo: " + userInput + ".Comprueba si  el codigo del usuario corresponde con el codigo pedido y devuelve solo  si es correcto o incorrecto, una palabra";
 
         ChatMessage newMessage = new ChatMessage();
         newMessage.Content = newText;
@@ -38,18 +37,24 @@ public class ChatGPTManager : MonoBehaviour
             messages.Add(chatResponse);
 
             Debug.Log(chatResponse.Content);
+            if (chatResponse.Content.Trim().ToLower() == "correcto")
+            {
+                Debug.Log("El código del usuario es correcto.");
+
+                // Aquí llamas al método DropItem de la instancia de MaquinaRetro específica
+                int maquinaId = idMaquina; // Cambia esto al ID de la máquina que deseas afectar
+                MaquinaRetro maquinaRetroInstance = MaquinaRetro.FindById(maquinaId);
+                if (maquinaRetroInstance != null)
+                {
+                    maquinaRetroInstance.DropItem();
+                }
+                else
+                {
+                    Debug.LogError("No se encontró una instancia de MaquinaRetro con el ID especificado.");
+                }
+            }
         }
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 }

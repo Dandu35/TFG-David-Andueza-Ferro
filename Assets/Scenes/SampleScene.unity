@@ -1024,7 +1024,7 @@ PrefabInstance:
     - target: {fileID: 7778138042458409547, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: itemToDrop
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: ed17da9ceab2ee342aa3f3a4ddfa0e46, type: 2}
     - target: {fileID: 8586690911731117285, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_Name
       value: MaquinaRetro (1)
@@ -8366,6 +8366,10 @@ PrefabInstance:
       propertyPath: pcCanvas
       value: 
       objectReference: {fileID: 1556378031}
+    - target: {fileID: 7778138042458409547, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: itemToDrop
+      value: 
+      objectReference: {fileID: 11400000, guid: fbf5d3fa6eaa9794f9df53557de57c01, type: 2}
     - target: {fileID: 8586690911731117285, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_Name
       value: MaquinaRetro (3)
@@ -11617,7 +11621,7 @@ PrefabInstance:
     - target: {fileID: 7778138042458409547, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: itemToDrop
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 0a5022971f34a3443baac92fc5090783, type: 2}
     - target: {fileID: 8586690911731117285, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_Name
       value: MaquinaRetro (2)
