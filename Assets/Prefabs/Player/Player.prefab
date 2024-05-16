@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2338168551234116497}
-  - component: {fileID: 812886040837163082}
+  - component: {fileID: 3858715678724022145}
   - component: {fileID: 7464201931510690349}
   - component: {fileID: 6385068690991581761}
   - component: {fileID: 2448918870077906526}
@@ -41,7 +41,7 @@ Transform:
   - {fileID: 1133911109553229675}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &812886040837163082
+--- !u!61 &3858715678724022145
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,7 +73,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00011458993, y: -0.26437092}
+  m_Offset: {x: 0.001945883, y: -0.26711708}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -84,7 +84,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26135093, y: 0.10787529}
+  m_Size: {x: 0.26237065, y: 0.1063329}
   m_EdgeRadius: 0
 --- !u!50 &7464201931510690349
 Rigidbody2D:

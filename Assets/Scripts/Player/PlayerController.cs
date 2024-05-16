@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollitions = new List<RaycastHit2D>();
 
     bool canMove = true;
+    bool nearMaquinaRetro = false;
+
 
     void Start()
     {
@@ -56,7 +59,13 @@ public class PlayerController : MonoBehaviour
         {
             DecreaseHunger(3);
         }
+        if (Input.GetKeyDown(KeyCode.E) && nearMaquinaRetro)
+        {
+            PauseAndLoadPCScene();
+        }
     }
+
+
 
     void FixedUpdate()
     {
@@ -93,7 +102,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+
+
+
+
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -265,6 +278,28 @@ public class PlayerController : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+    void PauseAndLoadPCScene()
+    {
+        Time.timeScale = 0f; // Pausa el juego
+        SceneManager.LoadScene("PC", LoadSceneMode.Additive); // Cargar la nueva escena "PC" sin descargar la actual
+    }
+
+    // Detectar colisiones con MaquinaRetro
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("MaquinaRetro"))
+        {
+            nearMaquinaRetro = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("MaquinaRetro"))
+        {
+            nearMaquinaRetro = false;
         }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3255928184579647606}
   - component: {fileID: 1760988895769429243}
   - component: {fileID: 7778138042458409547}
+  - component: {fileID: 8666333448723951413}
   m_Layer: 0
   m_Name: MaquinaRetro
   m_TagString: Untagged
@@ -171,4 +172,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef27f6fe3067f564e8e5c11467f3a5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: PC
+  id: 0
+--- !u!70 &8666333448723951413
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586690911731117285}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008899267, y: -0.25835258}
+  m_Size: {x: 0.7783237, y: 0.9669983}
+  m_Direction: 0
