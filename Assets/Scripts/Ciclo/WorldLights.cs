@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using System;
-using System.Collections;
+
 
 
 [RequireComponent(typeof(Light2D))]
 public class WorldLights : MonoBehaviour
 {
+    
     private Light2D light;
-
     [SerializeField]
     private WorldTime tiempoMundo;
     [SerializeField]

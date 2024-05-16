@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public bool hasPico = false;
 
     public Canvas canvas;
-
+    public GameObject pcCanvas;
     private TimeSpan lastDecreaseTime;
 
     public float moveSpeed = 1f;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollitions = new List<RaycastHit2D>();
 
     bool canMove = true;
-    bool nearMaquinaRetro = false;
+    public bool nearMaquinaRetro = false;
 
 
     void Start()
@@ -314,15 +314,15 @@ public class PlayerController : MonoBehaviour
     }
     void PauseAndLoadPCScene()
     {
-        Time.timeScale = 0f; // Pausa el juego
-        SceneManager.LoadScene("PC", LoadSceneMode.Additive); // Cargar la nueva escena "PC" sin descargar la actual
+        Time.timeScale = 0; // Pausa el juego
+        pcCanvas.SetActive(true);  
     }
 
     // Detectar colisiones con MaquinaRetro
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("MaquinaRetro"))
-        {
+        {  
             nearMaquinaRetro = true;
         }
     }

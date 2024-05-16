@@ -40,7 +40,7 @@ public class ChatGPTManager : MonoBehaviour
             Debug.Log(chatResponse.Content);
         }
     }
-   
+
     // Start is called before the first frame update
     void Start()
     {

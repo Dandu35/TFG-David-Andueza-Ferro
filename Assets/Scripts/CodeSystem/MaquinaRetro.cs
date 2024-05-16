@@ -8,9 +8,9 @@ public class MaquinaRetro : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Guardar el ID de la máquina en PlayerPrefs
-            PlayerPrefs.SetInt("IDMaquina", id);
-            PlayerPrefs.Save(); // Guardar los cambios
+            Desafios.idMaquina = id;
+            Explicacion.idMaquina = id;
+            AbrirEnlace.idMaquina = id;
 
             Debug.Log("ID de la máquina retro: " + id);
         }

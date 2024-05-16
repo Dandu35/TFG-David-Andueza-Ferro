@@ -5,18 +5,16 @@ using UnityEngine.UI;
 public class AbrirEnlace : MonoBehaviour
 {
 
-
+    public static int idMaquina;
     private string url;
     private string textoID1 = "https://www.w3schools.com/java/java_syntax.asp";
     private string textoID2 = "https://www.w3schools.com/java/java_output_numbers.asp";
     private string textoID3 = "https://www.w3schools.com/java/java_comments.asp";
     private string textoID4 = "https://www.w3schools.com/java/java_variables.asp";
 
-    void Start()
+    void Update()
     {
-        // Obtener el ID de la máquina retro almacenado en PlayerPrefs
-        int idMaquina = PlayerPrefs.GetInt("IDMaquina", 0); // 0 es el valor predeterminado si no se encuentra nada
-        // Asignar el texto según el ID de la máquina usando un switch
+        
         switch (idMaquina)
         {
             case 1:

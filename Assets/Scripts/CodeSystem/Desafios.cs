@@ -5,17 +5,15 @@ using UnityEngine.UI;
 
 public class Desafios : MonoBehaviour
 {
+    public static int idMaquina;
     public GameObject objetoTexto;
     public string textoID1 = "Inserte la parte que falta del código siguiente para generar \"Hola mundo\". public class MyClass {\r\n  public static void main(String[] args) {\r\n    \r\n.\r\n.\r\n(\"Hello World\");\r\n  }\r\n}";
     public string textoID2 = "Texto para ID 2";
     public string textoID3 = "Texto para ID 3";
     public string textoID4 = "Texto para ID 4";
 
-    void Start()
+    void Update()
     {
-        // Obtener el ID de la máquina retro almacenado en PlayerPrefs
-        int idMaquina = PlayerPrefs.GetInt("IDMaquina", 0); // 0 es el valor predeterminado si no se encuentra nada
-
         // Asignar el texto según el ID de la máquina usando un switch
         switch (idMaquina)
         {
@@ -36,10 +34,5 @@ public class Desafios : MonoBehaviour
                 objetoTexto.GetComponent<Text>().text = "Texto predeterminado";
                 break;
         }
-    }
-
-    void Update()
-    {
-
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Explicacion : MonoBehaviour
 {
+    public static int idMaquina;
     public GameObject objetoTexto;
     public string textoID1 = "Las llaves {}marcan el principio y el final de un bloque de código.\r\n\r\n" +
         "Systemes una clase Java incorporada que contiene miembros útiles, como out, que es la abreviatura de \"salida\". El println()método, abreviatura de \"imprimir línea\"" +
@@ -14,11 +15,9 @@ public class Explicacion : MonoBehaviour
     public string textoID3 = "Texto EXPLICACION  para ID 3";
     public string textoID4 = "Texto EXPLICACION  para ID 4";
 
-    void Start()
-    {
-        // Obtener el ID de la máquina retro almacenado en PlayerPrefs
-        int idMaquina = PlayerPrefs.GetInt("IDMaquina", 0); // 0 es el valor predeterminado si no se encuentra nada
 
+    void Update()
+    {
         // Asignar el texto según el ID de la máquina usando un switch
         switch (idMaquina)
         {
@@ -39,11 +38,6 @@ public class Explicacion : MonoBehaviour
                 objetoTexto.GetComponent<Text>().text = "Texto predeterminado";
                 break;
         }
-    }
-
-    void Update()
-    {
-
     }
 }
 

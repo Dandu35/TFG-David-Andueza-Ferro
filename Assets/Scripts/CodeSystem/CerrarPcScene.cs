@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CerrarPcScene : MonoBehaviour
 {
+    public GameObject pcCanvas;
     public void ClosePCAndResumeGame()
     {
         Time.timeScale = 1f; // Reanuda el tiempo del juego
-        SceneManager.UnloadSceneAsync("PC"); // Cierra la escena PC
+        pcCanvas.SetActive(false);
     }
 }
