@@ -52,16 +52,10 @@ public class Desafios : MonoBehaviour
                 textoID4 = "En C#: Intentalo tu mismo: for (int i = 0; i < 5; i++) \r\n{\r\n  Console.WriteLine(i);\r\n}";
                 break;
             case 3:
-                textoID1 = "En Html: Intentalo tu mismo \n using System;\r\n\r\nnamespace HelloWorld\r\n{\r\n  class Program\r\n  {\r\n    static void Main(string[] args)\r\n    {\r\n      Console.WriteLine(\"Hello World!\");    \r\n    }\r\n  }\r\n} ";
-                textoID2 = "En Html: ";
-                textoID3 = "En Html: ";
-                textoID4 = "En Html: ";
-                break;
-            case 4:
-                textoID1 = "En Phyton: ";
-                textoID2 = "En Phyton: ";
-                textoID3 = "En Phyton: ";
-                textoID4 = "En Phyton: ";
+                textoID1 = "En Html: Intentalo tu mismo \n <!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>Page Title</title>\r\n</head>\r\n<body>\r\n\r\n<h1>This is a Heading</h1>\r\n<p>This is a paragraph.</p>\r\n\r\n</body>\r\n</html> ";
+                textoID2 = "En Html: crea un encabezado, un párrafo y una lista de cosas que te gustan hacer en tu tiempo libre ";
+                textoID3 = "En Html: crea un enlace (<a>) que lleva a otra página HTML llamada \"otra_pagina.html\"";
+                textoID4 = "En Html: crea un <h1> con un id ";
                 break;
             default:
                 break;

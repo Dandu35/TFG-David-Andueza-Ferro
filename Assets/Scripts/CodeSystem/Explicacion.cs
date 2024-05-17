@@ -56,16 +56,10 @@ public class Explicacion : MonoBehaviour
                 textoID4 = "La declaración 1 establece una variable antes de que comience el ciclo ( int i = 0).\r\n\r\nLa declaración 2 define la condición para que se ejecute el bucle ( idebe ser menor que 5). Si la condición es true, el ciclo comenzará de nuevo; si es así false, el ciclo finalizará.\r\n\r\nLa declaración 3 aumenta un valor ( i++) cada vez que se ejecuta el bloque de código en el bucle.";
                 break;
             case 3:
-                textoID1 = "Html texto 1";
-                textoID2 = "Html texto 2";
-                textoID3 = "Html texto 3";
-                textoID4 = "Html texto 4";
-                break;
-            case 4:
-                textoID1 = "Python texto 1";
-                textoID2 = "Python texto 2";
-                textoID3 = "Python texto 3";
-                textoID4 = "Python texto 4";
+                textoID1 = "<!DOCTYPE html>: Declara que el documento es de tipo HTML5.\r\n<html>: Marca el inicio del documento HTML.\r\n<head>: Contiene metadatos sobre el documento, como el título de la página y enlaces a scripts y estilos.\r\n<title>: Define el título de la página que se muestra en la pestaña del navegador.\r\n<body>: Contiene el contenido visible de la página.\r\n<h1>: Define un encabezado de nivel 1, que es el más importante y grande.\r\n<p>: Define un párrafo de texto.";
+                textoID2 = "<!DOCTYPE html>: Declara que el documento sigue la especificación HTML5.\r\n<html lang=\"es\">: Establece el idioma del documento como español.\r\n<head>: Contiene metadatos del documento y enlaces a archivos externos.\r\n<meta charset=\"UTF-8\">: Define la codificación de caracteres como UTF-8.\r\n<title>Mi Primer Ejercicio HTML</title>: Define el título de la página.\r\n<style>: Inicia la sección de estilos CSS internos.\r\nbody { ... }, .container { ... }, h1 { ... }, p { ... }: Establecen estilos para elementos específicos.\r\n</style>: Cierra la sección de estilos CSS.\r\n<body>: Contiene el contenido visible de la página.\r\n<div class=\"container\">: Crea un contenedor para el contenido.\r\n<h1>: Encabezado principal.\r\n<p>: Párrafo introductorio.\r\n<ul> y <li>: Crean una lista con elementos.\r\n</div>: Cierra el contenedor.\r\n</body>: Cierra el cuerpo del documento.\r\n</html>: Cierra el documento HTML.";
+                textoID3 = "La etiqueta HTML <a>define un hipervínculo. Tiene la siguiente sintaxis:\r\n\r\n<a href=\"url\">link text</a>\r\nEl atributo más importante del <a> elemento es el hrefatributo, que indica el destino del enlace.";
+                textoID4 = "El id atributo especifica una identificación única para un elemento HTML. El valor del id atributo debe ser único dentro del documento HTML.\r\n\r\nEl idatributo se utiliza para señalar una declaración de estilo específica en una hoja de estilo. JavaScript también lo utiliza para acceder y manipular el elemento con la identificación específica.\r\n\r\nLa sintaxis de id es: escriba un carácter almohadilla (#), seguido de un nombre de id. Luego, defina las propiedades CSS entre llaves {}.";
                 break;
             default:
                 break;

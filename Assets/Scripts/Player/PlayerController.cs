@@ -7,29 +7,32 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
+    // Variables públicas para la salud y el hambre
     public int maxHealth = 100;
     public int currentHealth;
     public int maxHunger = 10;
     public int currentHunger;
+
+    // Referencias a otros componentes y objetos
     private WorldTime worldTime;
     public HealthBar healthBar;
     public HungerBar hungerBar;
     private Animator animator;
-    public bool hasSword = false;
-    public bool hasAxe = false;
-    public bool hasPico = false;
-
-    public Canvas canvas;
-    public GameObject pcCanvas;
-    private TimeSpan lastDecreaseTime;
-
-    public float moveSpeed = 1f;
-    public ContactFilter2D movementFilter;
-    public float collisionOffset = 0.05f;
     public SwordAttack swordAttack;
     public AxeAttack axeAttack;
     public PicaxeAttack picaxeAttack;
-
+   
+    // Variables de control de movimiento y estado
+    public bool hasSword = false;
+    public bool hasAxe = false;
+    public bool hasPico = false;
+    public Canvas canvas;
+    public GameObject pcCanvas;
+    private TimeSpan lastDecreaseTime;
+    public float moveSpeed = 1f;
+    public ContactFilter2D movementFilter;
+    public float collisionOffset = 0.05f;
+    
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
@@ -46,16 +49,19 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        // Inicialización de la salud y el hambre
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
         currentHunger = maxHunger;
         hungerBar.SetMaxHunger(maxHunger);
-
+        
+        // Obtener referencias a componentes y objetos necesarios
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+       
+        // Obtener referencia al objeto WorldTime y suscribir al evento WorldTimeChanged
         GameObject worldTimeObject = GameObject.FindWithTag("WorldTime");
         if (worldTimeObject != null)
         {
@@ -66,7 +72,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError("No se encontró el objeto con el script WorldTime adjunto.");
         }
-
+        
+        // Iniciar la pérdida de salud por hambre si la comida es cero
         if (currentHunger <= 0)
         {
             healthLossCoroutine = StartCoroutine(HealthLossCoroutine());
@@ -93,12 +100,15 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Movimiento del jugador basado en la entrada
         if (canMove)
         {
+            // Intentar mover al jugador en la dirección indicada por la entrada
             if (movementInput != Vector2.zero)
             {
                 bool success = TryMove(movementInput);
 
+                // Intentar mover en las direcciones X e Y si el movimiento directo falla
                 if (!success)
                 {
                     success = TryMove(new Vector2(movementInput.x, 0));
@@ -108,6 +118,7 @@ public class PlayerController : MonoBehaviour
                     success = TryMove(new Vector2(0, movementInput.y));
                 }
 
+                // Actualizar la animación del jugador en base al movimiento
                 animator.SetBool("isMoving", success);
             }
             else
@@ -115,6 +126,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isMoving", false);
             }
 
+            // Voltear el sprite del jugador según la dirección del movimiento
             if (movementInput.x < 0)
             {
                 spriteRenderer.flipX = true;
@@ -127,6 +139,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    // Método de destrucción para la limpieza de suscripciones
     void OnDestroy()
     {
         if (worldTime != null)
@@ -135,6 +148,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Método invocado cuando cambia el tiempo en el juego
     private void OnWorldTimeChanged(object sender, TimeSpan newTime)
     {
         // Verificar si ha pasado al menos una hora desde el último decremento de la comida
@@ -145,7 +159,8 @@ public class PlayerController : MonoBehaviour
             lastDecreaseTime = newTime; // Actualizar el tiempo del último decremento
         }
     }
-
+    
+    // Corrutina para la pérdida de salud por hambre
     IEnumerator HealthLossCoroutine()
     {
         while (true)
@@ -158,6 +173,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Método para recibir daño
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -166,6 +182,8 @@ public class PlayerController : MonoBehaviour
             MuerteJugador?.Invoke(this, EventArgs.Empty);
         }
     }
+
+    // Método para aumentar la salud
     void IncreaseHealth(int amount)
     {
         currentHealth += amount;
@@ -173,6 +191,8 @@ public class PlayerController : MonoBehaviour
             currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth);
     }
+
+    // Método para aumentar el hambre
     void IncreaseHunger(int amount)
     {
         currentHunger += amount;
@@ -181,6 +201,7 @@ public class PlayerController : MonoBehaviour
         hungerBar.SetHunger(currentHunger);
     }
 
+    // Método para disminuir el hambre
     void DecreaseHunger(int amount)
     {
         currentHunger -= amount;
@@ -202,6 +223,7 @@ public class PlayerController : MonoBehaviour
         hungerBar.SetHunger(currentHunger);
     }
 
+    // Método para intentar mover al jugador
     private bool TryMove(Vector2 direction)
     {
         if (direction != Vector2.zero)
@@ -227,17 +249,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Método invocado cuando se detecta movimiento
     void OnMove(InputValue movementValue)
     {
         movementInput = movementValue.Get<Vector2>();
     }
-
+    
+    // Método invocado cuando se activa la acción de ataque
     void OnFire()
     {
         Debug.Log("Click Derecho");
         CheckItemAction();
     }
 
+    // Método para ejecutar el ataque con espada
     public void SwordAttack()
     {
         Debug.Log("ha entrado ha espada");
@@ -252,6 +277,8 @@ public class PlayerController : MonoBehaviour
             swordAttack.AttackRight();
         }
     }
+    
+    // Método para ejecutar el ataque con pico
     public void PicaxeAttack()
     {
         Debug.Log("ha entrado ha pico");
@@ -266,6 +293,8 @@ public class PlayerController : MonoBehaviour
             picaxeAttack.AttackRight();
         }
     }
+
+    // Método para ejecutar el ataque con hacha
     public void AxeAttack()
     {
         Debug.Log("ha entrado ha hacha");
@@ -280,7 +309,7 @@ public class PlayerController : MonoBehaviour
             axeAttack.AttackRight();
         }
     }
-
+    // Métodos para finalizar ataques
     public void EndSwordAttack()
     {
         UnlockMovement();
@@ -306,6 +335,7 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
+    // Método para realizar la acción del ítem seleccionado
     void CheckItemAction()
     {
         Item currentItem = InventoryManager.instance.GetSelectedItem();
@@ -348,6 +378,8 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    // Método para pausar el juego y cargar la escena del PC
     void PauseAndLoadPCScene()
     {
         Time.timeScale = 0; // Pausa el juego

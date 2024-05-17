@@ -62,16 +62,10 @@ public class AbrirEnlace : MonoBehaviour
                 textoID4 = "https://www.w3schools.com/cs/cs_for_loop.php";
                 break;
             case 3:
-                textoID1 = "Html texto 1";
-                textoID2 = "Html texto 2";
-                textoID3 = "Html texto 3";
-                textoID4 = "Html texto 4";
-                break;
-            case 4:
-                textoID1 = "Python texto 1";
-                textoID2 = "Python texto 2";
-                textoID3 = "Python texto 3";
-                textoID4 = "Python texto 4";
+                textoID1 = "https://www.w3schools.com/html/default.asp";
+                textoID2 = "https://www.w3schools.com/html/html_lists.asp";
+                textoID3 = "https://www.w3schools.com/html/html_links.asp";
+                textoID4 = "https://www.w3schools.com/html/html_id.asp";
                 break;
             default:
                 break;
