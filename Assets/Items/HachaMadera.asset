@@ -16,5 +16,8 @@ MonoBehaviour:
   type: 3
   actionType: 2
   range: {x: 5, y: 4}
+  damage: 5
+  healingAmount: 0
+  hungerRestoration: 0
   stackable: 1
   image: {fileID: -385893182, guid: 2442c72ef036dca45ab300cfcc58b6d9, type: 3}

@@ -5,25 +5,34 @@ using UnityEngine;
 public class SwordAttack : MonoBehaviour
 {
     public Collider2D swordCollider;
+    
     Vector2 rightAttackOffset;
 
     public float damage = 3;
 
+    private InventoryManager inventoryManager;
+
     private void Start()
     {
         rightAttackOffset = transform.position;
+        inventoryManager = InventoryManager.instance;
+        SetDamage();
     }
 
     public void AttackRight() 
     {
+        SetDamage();
         Debug.Log("AttackRight");
+        Debug.Log("Damage set to: " + damage);
         swordCollider.enabled = true;
         transform.localPosition = rightAttackOffset; 
     }
 
     public void AttackLeft() 
     {
+        SetDamage();
         Debug.Log("AttackLeft");
+        Debug.Log("Damage set to: " + damage);
         swordCollider.enabled = true;
         transform.localPosition = new Vector3(-rightAttackOffset.x, rightAttackOffset.y); 
     }
@@ -41,6 +50,16 @@ public class SwordAttack : MonoBehaviour
                 enemy.Health -= damage;
                 Debug.Log(enemy.Health);
             }
+        }
+    }
+
+    private void SetDamage()
+    {
+        Item currentItem = inventoryManager.GetSelectedItem();
+        if (currentItem != null)
+        {
+            damage = currentItem.damage;
+            Debug.Log("Damage set to: " + damage);
         }
     }
 }

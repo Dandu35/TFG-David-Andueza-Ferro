@@ -13,6 +13,12 @@ public class EnemyFollowPlayer : MonoBehaviour
     private float nextAttackTime = 0f;
     private Animator animator;
 
+    public float minX, maxX, minY, maxY; // Límites de movimiento aleatorio
+    public float patrolSpeed = 1f;
+    private Vector2 patrolDestination;
+
+    private bool isPatrolling = true;
+
     private WorldTime worldTime;
     private int lastDay = 0;
     // Start is called before the first frame update
@@ -31,18 +37,22 @@ public class EnemyFollowPlayer : MonoBehaviour
         {
             Debug.LogError("No se encontró el objeto con el script WorldTime adjunto.");
         }
+        SetRandomPatrolDestination();
     }
 
     // Update is called once per frame
     void Update()
     {
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
-        if (distanceFromPlayer < lineOfSite && distanceFromPlayer > attackRange) {
+        if (distanceFromPlayer < lineOfSite && distanceFromPlayer > attackRange)
+        {
+            isPatrolling = false; // El enemigo ha detectado al jugador, ya no patrulla
             SetMoving(true);
-            transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
         else if (distanceFromPlayer <= attackRange)
         {
+            isPatrolling = false; // El enemigo ha detectado al jugador, ya no patrulla
             SetMoving(false);
             if (Time.time >= nextAttackTime)
             {
@@ -52,7 +62,10 @@ public class EnemyFollowPlayer : MonoBehaviour
         }
         else
         {
-            SetMoving(false); // El enemigo no se está moviendo
+            if (isPatrolling)
+            {
+                Patrol(); // Si está patrullando, continua patrullando
+            }
         }
     }
 
@@ -92,11 +105,31 @@ public class EnemyFollowPlayer : MonoBehaviour
             attackDamage += 5;
         }
     }
+    private void Patrol()
+    {
+        SetMoving(true);
+        transform.position = Vector2.MoveTowards(transform.position, patrolDestination, patrolSpeed * Time.deltaTime);
 
+        if (Vector2.Distance(transform.position, patrolDestination) < 0.2f)
+        {
+            SetRandomPatrolDestination();
+        }
+    }
 
+    private void SetRandomPatrolDestination()
+    {
+        float randomX = Random.Range(minX, maxX);
+        float randomY = Random.Range(minY, maxY);
+        patrolDestination = new Vector2(randomX, randomY);
+    }
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, lineOfSite);
         Gizmos.DrawWireSphere(transform.position, attackRange);
+
+        Gizmos.DrawLine(new Vector2(minX, minY), new Vector2(maxX, minY));
+        Gizmos.DrawLine(new Vector2(minX, minY), new Vector2(minX, maxY));
+        Gizmos.DrawLine(new Vector2(minX, maxY), new Vector2(maxX, maxY));
+        Gizmos.DrawLine(new Vector2(maxX, minY), new Vector2(maxX, maxY));
     }
 }
