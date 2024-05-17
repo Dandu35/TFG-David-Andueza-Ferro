@@ -38,6 +38,11 @@ public class PlayerController : MonoBehaviour
     bool canMove = true;
     public bool nearMaquinaRetro = false;
 
+    public int healthLossIntervalInSeconds = 3;
+    private Coroutine healthLossCoroutine;
+
+    public event EventHandler MuerteJugador;
+
 
     void Start()
     {
@@ -60,6 +65,11 @@ public class PlayerController : MonoBehaviour
         else
         {
             Debug.LogError("No se encontró el objeto con el script WorldTime adjunto.");
+        }
+
+        if (currentHunger <= 0)
+        {
+            healthLossCoroutine = StartCoroutine(HealthLossCoroutine());
         }
     }
 
@@ -136,12 +146,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator HealthLossCoroutine()
+    {
+        while (true)
+        {
+            // Perder vida de 3 en 3
+            TakeDamage(3);
 
+            // Esperar el intervalo de tiempo especificado antes de perder más vida
+            yield return new WaitForSeconds(healthLossIntervalInSeconds);
+        }
+    }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0) {
+            MuerteJugador?.Invoke(this, EventArgs.Empty);
+        }
     }
     void IncreaseHealth(int amount)
     {
@@ -162,7 +185,20 @@ public class PlayerController : MonoBehaviour
     {
         currentHunger -= amount;
         if (currentHunger < 0)
+        {
             currentHunger = 0;
+            if (healthLossCoroutine == null)
+            {
+                // Iniciar la corutina si no se está ejecutando
+                healthLossCoroutine = StartCoroutine(HealthLossCoroutine());
+            }
+        }
+        else if (currentHunger > 0 && healthLossCoroutine != null)
+        {
+            // Detener la corutina si el hambre ya no está en cero
+            StopCoroutine(healthLossCoroutine);
+            healthLossCoroutine = null;
+        }
         hungerBar.SetHunger(currentHunger);
     }
 

@@ -5,7 +5,6 @@ using UnityEngine.Rendering.Universal;
 using System;
 
 
-
 [RequireComponent(typeof(Light2D))]
 public class WorldLights : MonoBehaviour
 {

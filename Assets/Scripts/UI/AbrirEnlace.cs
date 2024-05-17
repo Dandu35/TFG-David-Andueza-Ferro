@@ -45,4 +45,36 @@ public class AbrirEnlace : MonoBehaviour
         Application.OpenURL(url);
 
     }
+    public void CambiarTodosLosTextos(int lenguaje)
+    {
+        switch (lenguaje)
+        {
+            case 1:
+                textoID1 = "https://www.w3schools.com/java/java_syntax.asp";
+                textoID2 = "https://www.w3schools.com/java/java_variables.asp";
+                textoID3 = "https://www.w3schools.com/java/java_variables.asp";
+                textoID4 = "https://www.w3schools.com/java/java_operators.asp";
+                break;
+            case 2:
+                textoID1 = "https://www.w3schools.com/cs/cs_syntax.php";
+                textoID2 = "https://www.w3schools.com/cs/cs_variables.php";
+                textoID3 = "https://www.w3schools.com/cs/cs_operators.php";
+                textoID4 = "https://www.w3schools.com/cs/cs_for_loop.php";
+                break;
+            case 3:
+                textoID1 = "Html texto 1";
+                textoID2 = "Html texto 2";
+                textoID3 = "Html texto 3";
+                textoID4 = "Html texto 4";
+                break;
+            case 4:
+                textoID1 = "Python texto 1";
+                textoID2 = "Python texto 2";
+                textoID3 = "Python texto 3";
+                textoID4 = "Python texto 4";
+                break;
+            default:
+                break;
+        }
+    }
 }
