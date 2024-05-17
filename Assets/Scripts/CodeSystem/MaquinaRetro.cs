@@ -9,6 +9,7 @@ public class MaquinaRetro : MonoBehaviour
     public Item itemToDrop;
     private bool itemDropped = false; // Bandera que indica si el ítem ya fue dropeado
     public GameObject pcCanvas;
+    public AudioSource audioSource;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !itemDropped) // Verifica si el jugador entró y el ítem no ha sido dropeado aún
@@ -38,6 +39,10 @@ public class MaquinaRetro : MonoBehaviour
             GameObject loot = Instantiate(lootPrefab, dropPosition, Quaternion.identity);
             loot.GetComponent<Loot>().Initialize(itemToDrop);
             itemDropped = true;
+            if (audioSource != null && audioSource.clip != null)
+            {
+                audioSource.Play();
+            }
 
         }
     }

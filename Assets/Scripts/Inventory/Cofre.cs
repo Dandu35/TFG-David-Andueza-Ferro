@@ -6,7 +6,7 @@ public class Cofre : MonoBehaviour
 {
     public GameObject cofreUI; // Referencia al objeto UI del cofre
     private bool isPlayerNear = false;
-
+    public AudioSource audioSource;
     private void Start()
     {
         // Asegúrate de que el cofre UI esté desactivado al inicio
@@ -51,6 +51,10 @@ public class Cofre : MonoBehaviour
         if (cofreUI != null)
         {
             cofreUI.SetActive(!cofreUI.activeSelf);
+            if (audioSource != null && audioSource.clip != null)
+            {
+                audioSource.Play();
+            }
         }
     }
 }

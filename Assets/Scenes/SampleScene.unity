@@ -267,6 +267,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
   m_PrefabInstance: {fileID: 575135984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &97651872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8582354109561712643, guid: 0e86995723205ec4a8d3b59f4a7860cf, type: 3}
+  m_PrefabInstance: {fileID: 1005491202934365914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &126021890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8059740749740930166, guid: 5984996d56d5a1f40992ab9dd58c8532, type: 3}
@@ -1594,11 +1599,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.74
+      value: -13.47
       objectReference: {fileID: 0}
     - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.99
+      value: 7.02
       objectReference: {fileID: 0}
     - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1643,7 +1648,11 @@ PrefabInstance:
     - target: {fileID: 7778138042458409547, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: itemToDrop
       value: 
-      objectReference: {fileID: 11400000, guid: ed17da9ceab2ee342aa3f3a4ddfa0e46, type: 2}
+      objectReference: {fileID: 11400000, guid: 241eba9778c12d54c817f26b7c0f477c, type: 2}
+    - target: {fileID: 8492429310202446164, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1239126536}
     - target: {fileID: 8586690911731117285, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_Name
       value: MaquinaRetro (1)
@@ -1787,7 +1796,7 @@ PrefabInstance:
     - target: {fileID: 4167877274355370166, guid: a6f31ed99090c2b44a6666945651eead, type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 8582354109561712643, guid: 0e86995723205ec4a8d3b59f4a7860cf, type: 3}
+      objectReference: {fileID: 97651872}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -73795,11 +73804,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.77
+      value: -11.51
       objectReference: {fileID: 0}
     - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.49
+      value: -3.97
       objectReference: {fileID: 0}
     - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -73844,7 +73853,11 @@ PrefabInstance:
     - target: {fileID: 7778138042458409547, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: itemToDrop
       value: 
-      objectReference: {fileID: 11400000, guid: fbf5d3fa6eaa9794f9df53557de57c01, type: 2}
+      objectReference: {fileID: 11400000, guid: 8cdff7313edffde42b0c549cf124fe4f, type: 2}
+    - target: {fileID: 8492429310202446164, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1239126536}
     - target: {fileID: 8586690911731117285, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_Name
       value: MaquinaRetro (3)
@@ -73874,6 +73887,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+--- !u!4 &1239126536 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2338168551234116497, guid: e1a0af354f336964b804563724bd47e9, type: 3}
+  m_PrefabInstance: {fileID: 3956004765701281760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1269441380
 GameObject:
   m_ObjectHideFlags: 0
@@ -74241,7 +74259,19 @@ PrefabInstance:
     - target: {fileID: 7778138042458409547, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: itemToDrop
       value: 
-      objectReference: {fileID: 11400000, guid: 3077908e9a8dfc843801d3571be3eeb5, type: 2}
+      objectReference: {fileID: 11400000, guid: ed17da9ceab2ee342aa3f3a4ddfa0e46, type: 2}
+    - target: {fileID: 8492429310202446164, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1239126536}
+    - target: {fileID: 8492429310202446164, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: soundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5034fb53a4ba9fe41b2e806020db1861, type: 3}
+    - target: {fileID: 8492429310202446164, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: maxVolumeDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8586690911731117285, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_Name
       value: MaquinaRetro
@@ -74331,6 +74361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cofreUI: {fileID: 1460300436}
+  audioSource: {fileID: 0}
 --- !u!4 &1547168553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5497033967199613062, guid: c38664f71cc8e4a4aa72ee4cd7bc5773, type: 3}
@@ -74364,6 +74395,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 960875542}
     m_Modifications:
+    - target: {fileID: 1968033155680619395, guid: 0e86995723205ec4a8d3b59f4a7860cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1239126536}
     - target: {fileID: 5302266359395918031, guid: 0e86995723205ec4a8d3b59f4a7860cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.28
@@ -75080,7 +75115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 649470337435046898, guid: f2223466f7172ba4b965edfa985d6193, type: 3}
       propertyPath: patrolSpeed
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 649470337435046898, guid: f2223466f7172ba4b965edfa985d6193, type: 3}
       propertyPath: patrolPoints.Array.data[0]
@@ -76510,6 +76545,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 960875542}
     m_Modifications:
+    - target: {fileID: 1968033155680619395, guid: 0e86995723205ec4a8d3b59f4a7860cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1239126536}
     - target: {fileID: 5302266359395918031, guid: 0e86995723205ec4a8d3b59f4a7860cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.57
@@ -77115,11 +77154,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.16
+      value: 5.98
       objectReference: {fileID: 0}
     - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.05
+      value: 8.69
       objectReference: {fileID: 0}
     - target: {fileID: 7298173440114641862, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -77164,7 +77203,11 @@ PrefabInstance:
     - target: {fileID: 7778138042458409547, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: itemToDrop
       value: 
-      objectReference: {fileID: 11400000, guid: 0a5022971f34a3443baac92fc5090783, type: 2}
+      objectReference: {fileID: 11400000, guid: 7661fe6ab603b9b488bfa49121b978cb, type: 2}
+    - target: {fileID: 8492429310202446164, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1239126536}
     - target: {fileID: 8586690911731117285, guid: 1b9404ba171981c4da8fe0a3e12858bb, type: 3}
       propertyPath: m_Name
       value: MaquinaRetro (2)
@@ -77835,6 +77878,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 960875542}
     m_Modifications:
+    - target: {fileID: 1968033155680619395, guid: 0e86995723205ec4a8d3b59f4a7860cf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1239126536}
     - target: {fileID: 4388878777070610676, guid: 0e86995723205ec4a8d3b59f4a7860cf, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -78648,6 +78695,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1333992351}
     m_Modifications:
+    - target: {fileID: 1564528188817612135, guid: c38664f71cc8e4a4aa72ee4cd7bc5773, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564528188817612135, guid: c38664f71cc8e4a4aa72ee4cd7bc5773, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4542772682360319562, guid: c38664f71cc8e4a4aa72ee4cd7bc5773, type: 3}
       propertyPath: m_Name
       value: PineTree

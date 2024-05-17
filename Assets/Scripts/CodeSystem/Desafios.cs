@@ -1,3 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 public class Desafios : MonoBehaviour
 {
     public static int idMaquina;
@@ -37,7 +41,7 @@ public class Desafios : MonoBehaviour
         {
             case 1:
                 textoID1 = "En Java: Intentalo tu mismo \n public class Main {\r\n  public static void main(String[] args) {\r\n    System.out.println(\"Hello World\");\r\n  }\r\n}";
-                textoID2 = "En Java: Crea una variable llamada nombre de tipo String y asígnale el valor \" John \":\r\n\r\nString name = \"John\";\r\nSystem.out.println(name);";
+                textoID2 = "En Java: Crea una variable llamada nombre de tipo String y asígnale el valor \" John \":\r\n\r\nString name = \"John\";\r\nSystem.out.println(name)";
                 textoID3 = "En Java: crea tres variables de tipo entero: \"length\" (longitud), \"width\" (ancho) y \"area\" (área). Luego, calcula el área de un rectángulo multiplicando la longitud por el ancho y asigna el resultado a la variable \"area\". Finalmente, imprime las variables en la consola junto con un mensaje descriptivo.";
                 textoID4 = "En Java; Declara una variable llamada \"x\" y asigna el valor de la suma de 100 y 50. En otras palabras, \"x\" contendrá el valor 150";
                 break;

@@ -7,6 +7,7 @@ public class Resources : MonoBehaviour
     [SerializeField] private GameObject lootPrefab;
     public Item itemToDrop; // El objeto de botín que quieres dejar caer
     public float health = 1;
+    public AudioSource audioSource;
 
     public float Health
     {
@@ -31,8 +32,12 @@ public class Resources : MonoBehaviour
         {
             GameObject loot = Instantiate(lootPrefab, transform.position, Quaternion.identity);
             loot.GetComponent<Loot>().Initialize(itemToDrop);
+            
         }
-
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.Play();
+        }
         Destroy(gameObject);
     }
 }

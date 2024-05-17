@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 7778138042458409547}
   - component: {fileID: 8666333448723951413}
   - component: {fileID: 6085552904984714360}
+  - component: {fileID: 8492429310202446164}
   m_Layer: 0
   m_Name: MaquinaRetro
   m_TagString: Untagged
@@ -260,6 +261,7 @@ MonoBehaviour:
   lootPrefab: {fileID: 8965860937157003083, guid: c2ade4611833ff043856aeae3fa138b8, type: 3}
   itemToDrop: {fileID: 0}
   pcCanvas: {fileID: 0}
+  audioSource: {fileID: 6085552904984714360}
 --- !u!70 &8666333448723951413
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -305,7 +307,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5034fb53a4ba9fe41b2e806020db1861, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 685ba561d8d0a394a8a50f46b864ace7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -391,3 +393,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8492429310202446164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8586690911731117285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9139682ff2d2644aea9baea21daae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClip: {fileID: 8300000, guid: 5034fb53a4ba9fe41b2e806020db1861, type: 3}
+  soundInterval: 3
+  maxVolumeDistance: 6
+  minVolumeDistance: 1
+  player: {fileID: 0}

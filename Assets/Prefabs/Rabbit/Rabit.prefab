@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2682497709539418721}
   - component: {fileID: 2278670315061228699}
   - component: {fileID: 7514031992358719512}
+  - component: {fileID: 1968033155680619395}
   m_Layer: 0
   m_Name: Rabit
   m_TagString: Enemy
@@ -350,3 +351,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.28714323}
   m_EdgeRadius: 0
+--- !u!114 &1968033155680619395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582354109561712643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9139682ff2d2644aea9baea21daae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClip: {fileID: 8300000, guid: d1a40d1166fdcac40ab7c6a9f060ad85, type: 3}
+  soundInterval: 3
+  maxVolumeDistance: 2
+  minVolumeDistance: 1
+  player: {fileID: 0}

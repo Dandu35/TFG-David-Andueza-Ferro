@@ -207,8 +207,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 7bc3a362ba25ca246bb657ac9f7aa715, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -306,6 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cofreUI: {fileID: 1995857267251944124}
+  audioSource: {fileID: 7480390269490345278}
 --- !u!1 &5710203962902806805
 GameObject:
   m_ObjectHideFlags: 0
