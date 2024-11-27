@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class ChatGPTManager : MonoBehaviour
 {
-    private OpenAIApi openAI = new OpenAIApi("sk-proj-vKY7OaE1eA46WlsBmyT4T3BlbkFJe9tc0aCuyl0Y7uCXhvYB", "org-LesZ88hs7BkcplHwfRr8kemT");
+    private OpenAIApi openAI = new OpenAIApi("Credenciales");
     private List<ChatMessage> messages = new List<ChatMessage>();
 
     public TMP_InputField inputField; // Referencia al TMP_InputField
@@ -39,10 +39,10 @@ public class ChatGPTManager : MonoBehaviour
             Debug.Log(chatResponse.Content);
             if (chatResponse.Content.Trim().ToLower() == "correcto")
             {
-                Debug.Log("El cÛdigo del usuario es correcto.");
+                Debug.Log("El c√≥digo del usuario es correcto.");
 
-                // AquÌ llamas al mÈtodo DropItem de la instancia de MaquinaRetro especÌfica
-                int maquinaId = idMaquina; // Cambia esto al ID de la m·quina que deseas afectar
+                // Aqu√≠ llamas al m√©todo DropItem de la instancia de MaquinaRetro espec√≠fica
+                int maquinaId = idMaquina; // Cambia esto al ID de la m√°quina que deseas afectar
                 MaquinaRetro maquinaRetroInstance = MaquinaRetro.FindById(maquinaId);
                 if (maquinaRetroInstance != null)
                 {
@@ -50,7 +50,7 @@ public class ChatGPTManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("No se encontrÛ una instancia de MaquinaRetro con el ID especificado.");
+                    Debug.LogError("No se encontr√≥ una instancia de MaquinaRetro con el ID especificado.");
                 }
             }
         }
