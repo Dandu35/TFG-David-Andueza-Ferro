@@ -1,63 +1,65 @@
-
 # Survival Game — Educational 2D Game
 
-Proyecto individual desarrollado con Unity y C# como Trabajo de Fin de Grado del ciclo de Desarrollo de Aplicaciones Multiplataforma (DAM).
+Proyecto individual desarrollado en Unity y C# como trabajo final del ciclo de Desarrollo de Aplicaciones Multiplataforma (DAM) en 2024.
 
 ## Descripción
 
-Survival Game es un proyecto de videojuego 2D de supervivencia con un enfoque educativo.
+**Survival Game** es un videojuego educativo de supervivencia en 2D. Combina mecánicas de juego con desafíos que introducen conceptos de programación y permiten avanzar por distintos niveles.
 
-Su propósito es combinar mecánicas de supervivencia con el aprendizaje de conceptos de programación, mediante retos interactivos relacionados con la progresión del jugador.
+El proyecto busca facilitar el aprendizaje mediante retos prácticos y un tutorial interactivo.
 
-El proyecto plantea una experiencia que incluye desafíos de dificultad progresiva y un tutorial interactivo para introducir conceptos de programación.
+## Funcionalidades implementadas
 
-## Objetivos
+Según la descripción del autor, la versión desarrollada incluye:
 
-- Combinar aprendizaje de programación y mecánicas de supervivencia.
-- Diseñar desafíos interactivos basados en conceptos de programación.
-- Plantear una progresión desde conceptos básicos hacia retos más avanzados.
-- Aplicar conocimientos de programación al desarrollo de un proyecto en Unity.
+- Movimiento y control del personaje.
+- Sistema de supervivencia con vida y recursos.
+- Varios niveles jugables.
+- Desafíos vinculados a conceptos de programación.
+- Tutorial interactivo.
+- Interfaz de usuario y menús.
+- Sistema de guardado.
+- Integración de inteligencia artificial o de una API.
 
-## Tecnologías
+> **Nota sobre la integración:** pendiente de documentar el servicio utilizado, su finalidad y su funcionamiento. La presencia de un paquete en el proyecto no basta por sí sola para describir una funcionalidad.
 
-- Unity 2022.3.23f1
-- C#
-- Git y GitHub
+## Tecnologías y herramientas
 
-## Instalación
+- **Motor:** Unity 2022.3.23f1 (según `ProjectSettings/ProjectVersion.txt`).
+- **Lenguaje:** C#.
+- **Control de versiones:** Git y GitHub.
 
-1. Clonar el repositorio:
+## Instalación y apertura del proyecto
 
+1. Instala Unity Hub y la versión **2022.3.23f1** del editor de Unity.
+2. Clona el repositorio:
+
+   ```bash
    git clone https://github.com/Dandu35/TFG-David-Andueza-Ferro.git
+   ```
 
-2. Abrir Unity Hub.
-3. Añadir el proyecto descargado.
-4. Utilizar Unity 2022.3.23f1.
-5. Abrir el proyecto y seleccionar la escena correspondiente.
+3. En Unity Hub, selecciona **Add project from disk** y elige la carpeta clonada.
+4. Abre el proyecto en Unity y selecciona una escena disponible desde el editor.
 
-## Estado del proyecto
-
-Proyecto académico desarrollado en 2024.
-
-Las funcionalidades implementadas y las características pendientes se documentarán por separado.
+> La ejecución correcta puede requerir dependencias, configuración o credenciales adicionales. No se ha validado una instalación limpia con estas instrucciones.
 
 ## Demostración
 
-Pendiente de incorporar capturas o un vídeo del proyecto.
+Pendiente de añadir capturas del juego o una grabación mostrando las mecánicas implementadas.
+
+## Contexto académico
+
+Proyecto individual de final de ciclo de **Desarrollo de Aplicaciones Multiplataforma (DAM)**, realizado en 2024.
 
 ## Autor
 
-David Andueza Ferro
-
+**David Andueza Ferro**  
 GitHub: https://github.com/Dandu35
 
 ## Contribuciones
 
-Actualmente no se aceptan contribuciones externas.
+Este repositorio es público, pero **no se aceptan contribuciones externas** en este momento. Su visibilidad pública no lo convierte en un proyecto de código abierto.
 
 ## Licencia
 
-Este proyecto utiliza una licencia propietaria. Consulta
-[LICENSE.md](LICENSE.md) para conocer las condiciones de uso.
-
-El código visible públicamente no implica autorización para reutilizarlo, modificarlo o redistribuirlo.
+El proyecto está sujeto a una **licencia propietaria**. Consulta [LICENSE.md](LICENSE.md) antes de usar, modificar o redistribuir su contenido.
