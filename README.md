@@ -1,37 +1,63 @@
-# TFG-David-Andueza-Ferro
-Survival Game 
 
-## Description
+# Survival Game — Educational 2D Game
 
-La aplicación es un juego 2D de aprendizaje y supervivencia desarrollado en Unity. El juego está diseñado para enseñar a los jugadores los fundamentos de la programación a través de desafíos de supervivencia. Los jugadores avanzarán a través de diferentes niveles, enfrentándose a obstáculos que solo pueden superarse mediante la aplicación de conceptos de programación. Además, se incluirá un tutorial interactivo que guiará a los jugadores desde conceptos básicos hasta desafíos más avanzados, con ejemplos prácticos y aplicaciones tanto dentro del juego como en el mundo real. Este proyecto es parte de mi trabajo de final de grado.
+Proyecto individual desarrollado con Unity y C# como Trabajo de Fin de Grado del ciclo de Desarrollo de Aplicaciones Multiplataforma (DAM).
 
-## Installation
+## Descripción
 
-1. Clona este repositorio: `git clone https://github.com/tu_usuario/tu_proyecto.git`
-2. Navega a la carpeta del proyecto: `cd tu_proyecto`
-3. Instala Unity y sus dependencias según las instrucciones de Unity.
-4. Abre el proyecto en Unity.
+Survival Game es un proyecto de videojuego 2D de supervivencia con un enfoque educativo.
 
-## Contribution
+Su propósito es combinar mecánicas de supervivencia con el aprendizaje de conceptos de programación, mediante retos interactivos relacionados con la progresión del jugador.
 
-Actualmente, este proyecto es parte de un trabajo de final de grado individual y tiene una licencia privada. Como resultado, no se aceptarán contribuciones externas en este momento, ya que el repositorio se mantiene privado hasta después de la fecha de entrega. Una vez completado este paso y si se decide cambiar la licencia a una que permita contribuciones, estaremos abiertos a recibir contribuciones y mejoras para el proyecto. Si estás interesado en contribuir después de esa fecha (20/05/2024) y si la licencia lo permite, sigue estos pasos:
+El proyecto plantea una experiencia que incluye desafíos de dificultad progresiva y un tutorial interactivo para introducir conceptos de programación.
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama: `git checkout -b nueva-caracteristica`.
-3. Haz tus cambios y haz commit: `git commit -am 'Agrega alguna característica'`.
-4. Empuja la rama a tu fork: `git push origin nueva-caracteristica`.
-5. Envía un pull request.
+## Objetivos
 
-Por favor, ten en cuenta que la decisión final sobre la aceptación de contribuciones será tomada una vez que el repositorio se haga público y se modifique la licencia, si es necesario.
+- Combinar aprendizaje de programación y mecánicas de supervivencia.
+- Diseñar desafíos interactivos basados en conceptos de programación.
+- Plantear una progresión desde conceptos básicos hacia retos más avanzados.
+- Aplicar conocimientos de programación al desarrollo de un proyecto en Unity.
 
-## Pautas de Contribución
+## Tecnologías
 
-Por favor, consulta nuestro archivo [CONTRIBUTING.md](CONTRIBUTING.md) para obtener detalles sobre nuestro código de conducta y proceso de envío de pull requests.
+- Unity 2022.3.23f1
+- C#
+- Git y GitHub
 
-## Problemas
+## Instalación
 
-Si encuentras algún problema o tienes alguna pregunta, por favor abre un [issue](https://github.com/Dandu35/TFG-David-Andueza-Ferro/issues) en este repositorio.
+1. Clonar el repositorio:
+
+   git clone https://github.com/Dandu35/TFG-David-Andueza-Ferro.git
+
+2. Abrir Unity Hub.
+3. Añadir el proyecto descargado.
+4. Utilizar Unity 2022.3.23f1.
+5. Abrir el proyecto y seleccionar la escena correspondiente.
+
+## Estado del proyecto
+
+Proyecto académico desarrollado en 2024.
+
+Las funcionalidades implementadas y las características pendientes se documentarán por separado.
+
+## Demostración
+
+Pendiente de incorporar capturas o un vídeo del proyecto.
+
+## Autor
+
+David Andueza Ferro
+
+GitHub: https://github.com/Dandu35
+
+## Contribuciones
+
+Actualmente no se aceptan contribuciones externas.
 
 ## Licencia
 
-Este proyecto está protegido por una licencia propietaria y no se proporciona bajo la Licencia MIT. El acceso al código fuente y su uso están sujetos a los términos y condiciones descritos en la licencia adjunta. Consulta el archivo [LICENSE.md](LICENSE.md) para más detalles.
+Este proyecto utiliza una licencia propietaria. Consulta
+[LICENSE.md](LICENSE.md) para conocer las condiciones de uso.
+
+El código visible públicamente no implica autorización para reutilizarlo, modificarlo o redistribuirlo.
